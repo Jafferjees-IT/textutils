@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TextUtils() {
+function TextUtils(props) {
   const [textvalue, setTextvalue] = useState("Type here");
 
   function ChangeText(event) {
