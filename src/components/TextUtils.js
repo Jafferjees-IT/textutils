@@ -11,12 +11,14 @@ function TextUtils(props) {
     // let mytext=textvalue.toUpperCase()
     // setTextvalue(mytext)
     setTextvalue(textvalue.toUpperCase());
+    props.showAlert("Converted to uppercase!", "success");
   }
 
   function ChangeToLower() {
     // let mytext=textvalue.toUpperCase()
     // setTextvalue(mytext)
     setTextvalue(textvalue.toLowerCase());
+    props.showAlert("Converted to lowercase!", "success");
   }
   return (
     <>
