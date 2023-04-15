@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-//import Counter from './components/Counter';
+import Counter from "./components/Counter";
 import TextUtils from "./components/TextUtils";
 import Alert from "./components/Alert";
 
@@ -32,10 +33,20 @@ function App() {
   };
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      {/* <Counter heading="You Clicked me " /> */}
-      <Alert alert={alert} />
-      <TextUtils showAlert={showAlert} />
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Routes>
+            <Route
+              path="/Counter"
+              element={<Counter heading="You Clicked me " />}
+            />
+
+            <Route path="/" element={<TextUtils showAlert={showAlert} />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }
